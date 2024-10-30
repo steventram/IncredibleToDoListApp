@@ -12,11 +12,17 @@ import {
 } from 'react-native';
 
 
-function ToDoList() {
+function ToDoList({tasks}) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Pressable>
+        {tasks.map((tasks)=>(<Pressable>
+          <View style={[]}>
+            <Text>{tasks}</Text>
+          </View>
+        </Pressable>))}
+
+        {/* <Pressable>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Do laundry</Text>
           </View>
@@ -30,7 +36,7 @@ function ToDoList() {
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Walk dog</Text>
           </View>
-        </Pressable>
+        </Pressable> */}
       </ScrollView>
     </SafeAreaView>
   );
