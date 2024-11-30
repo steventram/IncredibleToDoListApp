@@ -18,7 +18,7 @@ import {
 import ToDoList from './components/todolist';
 import ToDoForm from './components/todoform';
 import { useState } from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();

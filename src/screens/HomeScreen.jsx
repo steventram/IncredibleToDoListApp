@@ -20,7 +20,7 @@ import ToDoForm from "./todoform";
 import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 
-function App() {
+function HomeScreen({ navigation }) {
   const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
 
   const addTask = (taskText) => {
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;
