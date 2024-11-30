@@ -15,10 +15,13 @@ import {
   TextInput,
   Button
 } from 'react-native';
-import ToDoList from './todolist';
-import ToDoForm from './todoform';
+import ToDoList from './components/todolist';
+import ToDoForm from './components/todoform';
 import { useState } from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+const Stack = createStackNavigator();
 
 function App() {
 
@@ -29,10 +32,12 @@ function App() {
   };
 
   return (
-    <SafeAreaView>
-      <ToDoList tasks={tasks}/>
-      <ToDoForm addTask={addTask}/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
