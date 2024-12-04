@@ -4,7 +4,6 @@ import { View, StyleSheet } from 'react-native';
 const MainLayout = ({ children }) => {
   return (
     <View style={styles.container}>
-      <Header/>
       {children}
     </View>
   );

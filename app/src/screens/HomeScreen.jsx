@@ -1,9 +1,3 @@
-/**
- * My To Do List App
- *
- * @format
- */
-
 import React from "react";
 import {
   SafeAreaView,
@@ -15,10 +9,11 @@ import {
   TextInput,
   Button,
 } from "react-native";
-import ToDoList from "./todolist";
-import ToDoForm from "./todoform";
 import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
+import ToDoForm from "../components/todoform";
+import ToDoList from "../components/todolist";
+import Header from "../components/header";
 
 function HomeScreen({ navigation }) {
   const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
@@ -29,11 +24,12 @@ function HomeScreen({ navigation }) {
 
   return (
     <MainLayout>
+      <Header/>
       <ToDoList tasks={tasks} />
       <ToDoForm addTask={addTask} />
       <Button
         title="Go to About"
-        onPress={() => navigation.navigate("About")}
+        onPress={() => navigation.navigate("AboutScreen")}
       />
     </MainLayout>
   );
